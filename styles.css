@@ -2,91 +2,46 @@
 
 /* Body */
 body {
-	background: #279F9D;
+	background: #ffb3a7;
+	color: #fff;
 	font-family: 'Raleway', sans-serif;
-	font-size: 5em;
+	font-size: 1.1em;
 	margin: 5% 0;
 }
-
-article {
-	float: left;
-	position: relative;
-	text-align: center;
-	top: 45%;
-	width: 33%;
+.container{
+  bottom: 0;
+  height: 444px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top:0;
 }
 
-/* Body Links */
-a, a:visited {
+/* Colors */
+i {
 	color: #fff;
-	text-decoration: none;
 	transition: color 0.5s ease;
 }
-
-a:hover, a:active {
-	color: #BED3CB;
+.fa-female:hover {
+	color: #ee6e73;
 }
-
-/* Footer */
-footer {
-	background: rgba(0,0,0,0.7);
-	bottom: 0px;
-	color: #fff;
-	font-size: 0.4em;
-	height: 40px;
-	padding: 10px 0 20px 0;
-	position: absolute;
-	text-align: center;
-	width: 100%;
+.fa-linkedin:hover {
+	color: #008cc9;
 }
-
-p {
-	display: inline;
-	margin: 0 3%;
+.fa-github:hover {
+	color: #333;
 }
-
-footer a, footer a:visited, footer a:hover, footer a:active {
-	color: #fff;
+.fa-pencil:hover {
+	color: #ffa945;
 }
-
-footer a:hover, footer a:active {
-	border-bottom: 1px solid white;
+.fa-twitter:hover {
+	color: #55acee;
 }
-
-/****************
-* Media Queries *
-****************/
-
-/* landscape */
-@media (min-width: 750px) and (orientation: landscape) {
-	article {
-		font-size: 1em;
-		top: 30%;
-	}
+.fa-envelope:hover {
+	color: #dc3023;
 }
-
-@media (max-width: 750px) and (orientation: landscape) {
-	article {
-		font-size: 0.5em;
-		padding-top: 0;
-		top: 30%;
-	}
-}
-
-/* portrait */
-@media (max-width: 980px) and (orientation: portrait) {
-	article {
-		font-size: 1.5em;
-		height: 30%;
-		padding-top: 4%;
-		top: 0;
-		width: 100%;
-	}
-}
-
-@media (max-width: 450px) and (orientation: portrait) {
-	article {
-		font-size: 1em;
-		padding-top: 4%;
-	}
+.fa-skype:hover {
+	color: #00AFF0;
 }
