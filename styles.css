@@ -6,31 +6,25 @@ body {
 	color: #fff;
 	font-family: 'Raleway', sans-serif;
 	font-size: 2em;
-	margin: 5% 0;
-  -webkit-transition: background-color 2000ms linear;
-  -moz-transition: background-color 2000ms linear;
-  -o-transition: background-color 2000ms linear;
-  -ms-transition: background-color 2000ms linear;
-  transition: background-color 2000ms linear;
+  -webkit-transition: background-color 3000ms linear;
+  -moz-transition: background-color 3000ms linear;
+  -o-transition: background-color 3000ms linear;
+  -ms-transition: background-color 3000ms linear;
+  transition: background-color 3000ms linear;
 }
 
 .container {
-  bottom: 0;
-  height: 444px;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top:0;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
 }
 
 ul {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  text-align: left;
-  width: 180px;
 }
 
 li {
