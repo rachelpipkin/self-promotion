@@ -44,6 +44,7 @@ i {
 /* Colors */
 .linkedin:hover { color: #008cc9; }
 .github:hover { color: #333; }
+.gitlab:hover { color: #FC6D27; }
 .blog:hover { color: #00ab6b; }
 .twitter:hover { color: #55acee; }
 .email:hover { color: #dc3023; }
