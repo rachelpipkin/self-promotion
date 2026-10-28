@@ -29,12 +29,15 @@ h3 {
   background-clip: text;
   color: transparent;
   cursor: default;
+  font-size: 2em;
   font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
 h3:hover {
   background-image: linear-gradient(90deg, #F06292, #FF8A65, #FFD54F, #81C784, #64B5F6, #BA68C8, #F06292);
-  animation: rainbow 3s linear infinite;
+  animation: rainbow 8s linear infinite;
   filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
 }
 
@@ -47,28 +50,32 @@ h3:hover {
   h3:hover { animation: none; }
 }
 
+/* Grid makes every link pill as wide as the widest one */
 ul {
+  display: grid;
   list-style: none;
   margin: 0 auto;
   padding: 0;
 }
 
 li {
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
 a, a:visited {
   color: #fff;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 8px 24px;
-  margin: 0 -24px;
   border-radius: 999px;
   transition: background-color 0.4s ease;
 }
 
 i {
   padding-right: 12px;
+  line-height: 1;
 }
 
 /* Colors: brand-tinted pills on hover */
@@ -76,6 +83,42 @@ i {
 .github:hover { background-color: rgba(51, 51, 51, 0.5); }
 .gitlab:hover { background-color: rgba(252, 109, 39, 0.65); }
 .email:hover { background-color: rgba(220, 48, 35, 0.55); }
+
+/* Effect toggle: bubbles or sparkles */
+.effect-toggle {
+  display: flex;
+  gap: 4px;
+  margin-top: 32px;
+  padding: 4px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.effect-toggle button {
+  font-size: 24px;
+  line-height: 1;
+  padding: 8px 14px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.effect-toggle button[aria-pressed="true"] {
+  background-color: #fff;
+}
+
+/* Touch: keep long-press for bubbles instead of text selection and callout menus */
+@media (hover: none) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
 /* Bubbles (see scripts.js) */
 .bubble {
@@ -107,6 +150,31 @@ i {
 
 @keyframes grow {
   to { width: 140px; height: 140px; }
+}
+
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 18px;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  animation: sparkle 0.7s ease-out forwards;
+}
+
+@keyframes sparkle {
+  to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(90deg) scale(0.3); opacity: 0; }
+}
+
+/* Trail sparkles linger, twinkle, and drift down */
+.sparkle.trail {
+  animation: sparkle-trail 1.8s ease-out forwards;
+}
+
+@keyframes sparkle-trail {
+  30% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  60% { opacity: 0.5; }
+  75% { opacity: 0.9; }
+  to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy) + 50px)) rotate(180deg) scale(0.2); opacity: 0; }
 }
 
 @keyframes pop {
