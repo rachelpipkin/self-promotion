@@ -1,10 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:100);
+@import url(https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap);
 
 /* Body */
 body {
 	background: #ffb3a7;
 	color: #fff;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Unbounded', sans-serif;
+	font-weight: 300;
 	font-size: 2em;
   -webkit-transition: background-color 3000ms linear;
   -moz-transition: background-color 3000ms linear;
@@ -19,6 +20,29 @@ body {
 	flex-direction: column;
 	height: 100%;
 	justify-content: center;
+}
+
+h3 {
+  background-image: linear-gradient(90deg, #fff, #fff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: default;
+}
+
+h3:hover {
+  background-image: linear-gradient(90deg, #EC407A, #FF7043, #FFA726, #66BB6A, #42A5F5, #AB47BC, #EC407A);
+  animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+  from { background-position: 0% 50%; }
+  to { background-position: 200% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h3:hover { animation: none; }
 }
 
 ul {
@@ -45,7 +69,4 @@ i {
 .linkedin:hover { color: #008cc9; }
 .github:hover { color: #333; }
 .gitlab:hover { color: #FC6D27; }
-.blog:hover { color: #00ab6b; }
-.twitter:hover { color: #55acee; }
 .email:hover { color: #dc3023; }
-.skype:hover { color: #00AFF0; }
