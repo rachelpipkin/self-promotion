@@ -32,7 +32,7 @@ h3 {
 }
 
 h3:hover {
-  background-image: linear-gradient(90deg, #EC407A, #FF7043, #FFA726, #66BB6A, #42A5F5, #AB47BC, #EC407A);
+  background-image: linear-gradient(90deg, #F8BBD0, #FFCCBC, #FFF59D, #C8E6C9, #BBDEFB, #E1BEE7, #F8BBD0);
   animation: rainbow 3s linear infinite;
 }
 
@@ -70,3 +70,39 @@ i {
 .github:hover { color: #333; }
 .gitlab:hover { color: #FC6D27; }
 .email:hover { color: #dc3023; }
+
+/* Bubbles (see scripts.js) */
+.bubble {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--tint, #fff);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 45%),
+    radial-gradient(circle, transparent 50%, var(--tint, #fff));
+  opacity: 0.9;
+}
+
+.bubble.floating {
+  animation: float-up 1.4s ease-out forwards;
+}
+
+.bubble.growing {
+  animation: grow 2s ease-out forwards;
+}
+
+.bubble.popping {
+  animation: pop 0.25s ease-out forwards;
+}
+
+@keyframes float-up {
+  to { transform: translate(-50%, -150%) scale(1.3); opacity: 0; }
+}
+
+@keyframes grow {
+  to { width: 140px; height: 140px; }
+}
+
+@keyframes pop {
+  to { transform: translate(-50%, -50%) scale(1.6); opacity: 0; border-style: dashed; }
+}
