@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Unbounded:wght@200;700&display=swap);
 
 /* Body */
 body {
@@ -29,11 +29,13 @@ h3 {
   background-clip: text;
   color: transparent;
   cursor: default;
+  font-weight: 700;
 }
 
 h3:hover {
-  background-image: linear-gradient(90deg, #F8BBD0, #FFCCBC, #FFF59D, #C8E6C9, #BBDEFB, #E1BEE7, #F8BBD0);
+  background-image: linear-gradient(90deg, #F06292, #FF8A65, #FFD54F, #81C784, #64B5F6, #BA68C8, #F06292);
   animation: rainbow 3s linear infinite;
+  filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
 }
 
 @keyframes rainbow {
@@ -52,24 +54,28 @@ ul {
 }
 
 li {
-  margin: 20px 0;
+  margin: 6px 0;
 }
 
 a, a:visited {
   color: #fff;
   text-decoration: none;
-  transition: color 0.5s ease;
+  display: inline-block;
+  padding: 8px 24px;
+  margin: 0 -24px;
+  border-radius: 999px;
+  transition: background-color 0.4s ease;
 }
 
 i {
-  padding-right: 20px;
+  padding-right: 12px;
 }
 
-/* Colors */
-.linkedin:hover { color: #008cc9; }
-.github:hover { color: #333; }
-.gitlab:hover { color: #FC6D27; }
-.email:hover { color: #dc3023; }
+/* Colors: brand-tinted pills on hover */
+.linkedin:hover { background-color: rgba(0, 140, 201, 0.6); }
+.github:hover { background-color: rgba(51, 51, 51, 0.5); }
+.gitlab:hover { background-color: rgba(252, 109, 39, 0.65); }
+.email:hover { background-color: rgba(220, 48, 35, 0.55); }
 
 /* Bubbles (see scripts.js) */
 .bubble {
